@@ -29,7 +29,7 @@
 }
 
 * { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   background: var(--bg); color: var(--text);
   font-family: Inter, system-ui, sans-serif; font-variant-numeric: tabular-nums;
@@ -107,7 +107,7 @@ h2 { font-size: clamp(30px, 4.4vw, 46px); line-height: 1.1; letter-spacing: -1.4
 .ticks .fi { color: var(--brand); background: var(--green-soft); width: 24px; height: 24px; border-radius: 8px; display: grid; place-items: center; font-size: 13px; flex: none; margin-top: 1px; }
 .alt { background: linear-gradient(to bottom, #050605, #0A0A0B 50%, #050605); }
 .stage { position: relative; }
-.stage::before { content: ""; position: absolute; inset: 8% 0 auto; margin: auto; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(closest-side, rgba(44,203,113,.16), transparent); z-index: 0; }
+.stage::before { content: ""; position: absolute; inset: 8% 0 auto; margin: auto; width: min(380px, 100%); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(44,203,113,.16), transparent); z-index: 0; }
 .stage .phone { position: relative; z-index: 1; }
 
 /* "Como funciona" */
